@@ -4,7 +4,7 @@
 #
 Name     : R-profdpm
 Version  : 3.3
-Release  : 10
+Release  : 11
 URL      : https://cran.r-project.org/src/contrib/profdpm_3.3.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/profdpm_3.3.tar.gz
 Summary  : Profile Dirichlet Process Mixtures
@@ -12,7 +12,6 @@ Group    : Development/Tools
 License  : GPL-2.0+
 Requires: R-profdpm-lib = %{version}-%{release}
 BuildRequires : buildreq-R
-BuildRequires : util-linux
 
 %description
 the posterior mode) for a class of product partition models
@@ -31,21 +30,22 @@ lib components for the R-profdpm package.
 
 %prep
 %setup -q -c -n profdpm
+cd %{_builddir}/profdpm
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1571878524
+export SOURCE_DATE_EPOCH=1589537567
 
 %install
-export SOURCE_DATE_EPOCH=1571878524
+export SOURCE_DATE_EPOCH=1589537567
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
