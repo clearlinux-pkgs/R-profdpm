@@ -4,7 +4,7 @@
 #
 Name     : R-profdpm
 Version  : 3.3
-Release  : 20
+Release  : 21
 URL      : https://cran.r-project.org/src/contrib/profdpm_3.3.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/profdpm_3.3.tar.gz
 Summary  : Profile Dirichlet Process Mixtures
